@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Horizon - Hotel Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-hotel"></i>
+                <span>Grand Horizon</span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#dashboard" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+                    <li><a href="#rooms"><i class="fas fa-bed"></i> <span>Rooms</span></a></li>
+                    <li><a href="#reservations"><i class="fas fa-calendar-check"></i> <span>Reservations</span></a></li>
+                    <li><a href="#guests"><i class="fas fa-users"></i> <span>Guests</span></a></li>
+                    <li><a href="#staff"><i class="fas fa-user-tie"></i> <span>Staff</span></a></li>
+                    <li><a href="#reports"><i class="fas fa-chart-bar"></i> <span>Reports</span></a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                    <div class="notification-dropdown">
+                        <div class="notification-item">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <p>New reservation received</p>
+                                <small>2 minutes ago</small>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <i class="fas fa-bed"></i>
+                            <div>
+                                <p>Room 205 needs cleaning</p>
+                                <small>15 minutes ago</small>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <i class="fas fa-user-check"></i>
+                            <div>
+                                <p>Guest checked in to Room 301</p>
+                                <small>1 hour ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-profile">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+                    <span>Admin</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="profile-dropdown">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section">
+                <div class="section-header">
+                    <h2>Dashboard Overview</h2>
+                    <div class="date-picker">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Today, June 3, 2025</span>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="card">
+                        <div class="card-icon bg-blue">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Total Rooms</h3>
+                            <p>120</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon bg-green">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Occupied</h3>
+                            <p>84</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon bg-orange">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Available</h3>
+                            <p>36</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon bg-red">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>Today's Check-ins</h3>
+                            <p>12</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Bookings -->
+                <div class="recent-bookings">
+                    <div class="section-subheader">
+                        <h3>Recent Bookings</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Guest Name</th>
+                                    <th>Room Type</th>
+                                    <th>Check-In</th>
+                                    <th>Check-Out</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#GH-1256</td>
+                                    <td>John Smith</td>
+                                    <td>Deluxe Suite</td>
+                                    <td>Jun 3, 2025</td>
+                                    <td>Jun 7, 2025</td>
+                                    <td><span class="status confirmed">Confirmed</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#GH-1255</td>
+                                    <td>Emily Johnson</td>
+                                    <td>Executive Room</td>
+                                    <td>Jun 3, 2025</td>
+                                    <td>Jun 5, 2025</td>
+                                    <td><span class="status checked-in">Checked In</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#GH-1254</td>
+                                    <td>Robert Brown</td>
+                                    <td>Presidential Suite</td>
+                                    <td>Jun 2, 2025</td>
+                                    <td>Jun 10, 2025</td>
+                                    <td><span class="status checked-in">Checked In</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#GH-1253</td>
+                                    <td>Sarah Williams</td>
+                                    <td>Standard Room</td>
+                                    <td>Jun 4, 2025</td>
+                                    <td>Jun 6, 2025</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#GH-1252</td>
+                                    <td>Michael Davis</td>
+                                    <td>Family Suite</td>
+                                    <td>Jun 1, 2025</td>
+                                    <td>Jun 8, 2025</td>
+                                    <td><span class="status checked-out">Checked Out</span></td>
+                                    <td><button class="btn btn-sm btn-primary">Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <div class="section-subheader">
+                        <h3>Quick Actions</h3>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-action" id="quickNewBooking">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>New Booking</span>
+                        </button>
+                        <button class="btn btn-action" id="quickAddGuest">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add Guest</span>
+                        </button>
+                        <button class="btn btn-action" id="quickGenerateInvoice">
+                            <i class="fas fa-receipt"></i>
+                            <span>Generate Invoice</span>
+                        </button>
+                        <button class="btn btn-action" id="quickSendNotification">
+                            <i class="fas fa-bell"></i>
+                            <span>Send Notification</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rooms Section -->
+            <section id="rooms" class="section" style="display: none;">
+                <div class="section-header">
+                    <h2>Room Management</h2>
+                    <button class="btn btn-primary" id="addRoomBtn">
+                        <i class="fas fa-plus"></i> Add Room
+                    </button>
+                </div>
+                
+                <div class="room-filters">
+                    <div class="filter-group">
+                        <label for="roomTypeFilter">Room Type:</label>
+                        <select id="roomTypeFilter" class="form-control">
+                            <option value="all">All Types</option>
+                            <option value="standard">Standard</option>
+                            <option value="deluxe">Deluxe</option>
+                            <option value="suite">Suite</option>
+                            <option value="executive">Executive</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="roomStatusFilter">Status:</label>
+                        <select id="roomStatusFilter" class="form-control">
+                            <option value="all">All Statuses</option>
+                            <option value="available">Available</option>
+                            <option value="occupied">Occupied</option>
+                            <option value="maintenance">Maintenance</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary" id="resetFiltersBtn">
+                        <i class="fas fa-sync-alt"></i> Reset
+                    </button>
+                </div>
+                
+                <div class="table-container">
+                    <table id="roomsTable">
+                        <thead>
+                            <tr>
+                                <th>Room No.</th>
+                                <th>Type</th>
+                                <th>Floor</th>
+                                <th>Capacity</th>
+                                <th>Price/Night</th>
+                                <th>Amenities</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>101</td>
+                                <td>Standard</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>$120</td>
+                                <td>WiFi, TV</td>
+                                <td><span class="status available">Available</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary edit-room"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-room"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>201</td>
+                                <td>Deluxe</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>$180</td>
+                                <td>WiFi, TV, Mini-bar</td>
+                                <td><span class="status occupied">Occupied</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary edit-room"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-room"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>301</td>
+                                <td>Suite</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>$280</td>
+                                <td>WiFi, TV, Mini-bar, Jacuzzi</td>
+                                <td><span class="status available">Available</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary edit-room"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-room"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>102</td>
+                                <td>Standard</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>$120</td>
+                                <td>WiFi, TV</td>
+                                <td><span class="status maintenance">Maintenance</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary edit-room"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-room"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Add Room Modal -->
+                <div id="addRoomModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Add New Room</h3>
+                        <form id="roomForm">
+                            <div class="form-group">
+                                <label for="roomNumber">Room Number:</label>
+                                <input type="text" id="roomNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="roomType">Room Type:</label>
+                                <select id="roomType" required>
+                                    <option value="">Select Type</option>
+                                    <option value="standard">Standard</option>
+                                    <option value="deluxe">Deluxe</option>
+                                    <option value="suite">Suite</option>
+                                    <option value="executive">Executive</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="roomFloor">Floor:</label>
+                                <input type="number" id="roomFloor" min="1" max="20" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="roomCapacity">Capacity:</label>
+                                <input type="number" id="roomCapacity" min="1" max="6" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="roomPrice">Price/Night ($):</label>
+                                <input type="number" id="roomPrice" min="50" step="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Amenities:</label>
+                                <div class="amenities-checkboxes">
+                                    <label><input type="checkbox" name="amenities" value="wifi"> WiFi</label>
+                                    <label><input type="checkbox" name="amenities" value="tv"> TV</label>
+                                    <label><input type="checkbox" name="amenities" value="minibar"> Mini-bar</label>
+                                    <label><input type="checkbox" name="amenities" value="ac"> Air Conditioning</label>
+                                    <label><input type="checkbox" name="amenities" value="jacuzzi"> Jacuzzi</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Room</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Edit Room Modal -->
+                <div id="editRoomModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Edit Room</h3>
+                        <form id="editRoomForm">
+                            <div class="form-group">
+                                <label for="editRoomNumber">Room Number:</label>
+                                <input type="text" id="editRoomNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editRoomType">Room Type:</label>
+                                <select id="editRoomType" required>
+                                    <option value="standard">Standard</option>
+                                    <option value="deluxe">Deluxe</option>
+                                    <option value="suite">Suite</option>
+                                    <option value="executive">Executive</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="editRoomFloor">Floor:</label>
+                                <input type="number" id="editRoomFloor" min="1" max="20" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editRoomCapacity">Capacity:</label>
+                                <input type="number" id="editRoomCapacity" min="1" max="6" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="editRoomPrice">Price/Night ($):</label>
+                                <input type="number" id="editRoomPrice" min="50" step="10" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Amenities:</label>
+                                <div class="amenities-checkboxes">
+                                    <label><input type="checkbox" name="editAmenities" value="wifi"> WiFi</label>
+                                    <label><input type="checkbox" name="editAmenities" value="tv"> TV</label>
+                                    <label><input type="checkbox" name="editAmenities" value="minibar"> Mini-bar</label>
+                                    <label><input type="checkbox" name="editAmenities" value="ac"> Air Conditioning</label>
+                                    <label><input type="checkbox" name="editAmenities" value="jacuzzi"> Jacuzzi</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="editRoomStatus">Status:</label>
+                                <select id="editRoomStatus">
+                                    <option value="available">Available</option>
+                                    <option value="occupied">Occupied</option>
+                                    <option value="maintenance">Maintenance</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Room</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reservations Section -->
+            <section id="reservations" class="section" style="display: none;">
+                <div class="section-header">
+                    <h2>Reservation Management</h2>
+                    <button class="btn btn-primary" id="newReservationBtn">
+                        <i class="fas fa-plus"></i> New Reservation
+                    </button>
+                </div>
+                
+                <div class="reservation-filters">
+                    <div class="filter-group">
+                        <label for="reservationStatus">Status:</label>
+                        <select id="reservationStatus" class="form-control">
+                            <option value="all">All Statuses</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="pending">Pending</option>
+                            <option value="checked-in">Checked In</option>
+                            <option value="checked-out">Checked Out</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="reservationDate">Date Range:</label>
+                        <input type="date" id="reservationDate" class="form-control">
+                    </div>
+                    <button class="btn btn-secondary" id="applyReservationFilters">
+                        <i class="fas fa-filter"></i> Apply
+                    </button>
+                </div>
+                
+                <div class="table-container">
+                    <table id="reservationsTable">
+                        <thead>
+                            <tr>
+                                <th>Reservation ID</th>
+                                <th>Guest</th>
+                                <th>Room</th>
+                                <th>Check-In</th>
+                                <th>Check-Out</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GH-R1256</td>
+                                <td>John Smith</td>
+                                <td>Deluxe Suite (201)</td>
+                                <td>Jun 3, 2025</td>
+                                <td>Jun 7, 2025</td>
+                                <td>$720</td>
+                                <td><span class="status confirmed">Confirmed</span></td>
+                                <td>
+                                    <div class="action-dropdown">
+                                        <button class="btn btn-sm btn-primary dropdown-toggle">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="view-reservation"><i class="fas fa-eye"></i> View</a>
+                                            <a href="#" class="edit-reservation"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="#" class="checkin-reservation"><i class="fas fa-check-in"></i> Check-In</a>
+                                            <a href="#" class="invoice-reservation"><i class="fas fa-receipt"></i> Invoice</a>
+                                            <a href="#" class="cancel-reservation"><i class="fas fa-times"></i> Cancel</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>GH-R1255</td>
+                                <td>Emily Johnson</td>
+                                <td>Executive Room (305)</td>
+                                <td>Jun 3, 2025</td>
+                                <td>Jun 5, 2025</td>
+                                <td>$360</td>
+                                <td><span class="status checked-in">Checked In</span></td>
+                                <td>
+                                    <div class="action-dropdown">
+                                        <button class="btn btn-sm btn-primary dropdown-toggle">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="view-reservation"><i class="fas fa-eye"></i> View</a>
+                                            <a href="#" class="edit-reservation"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="#" class="checkout-reservation"><i class="fas fa-sign-out-alt"></i> Check-Out</a>
+                                            <a href="#" class="invoice-reservation"><i class="fas fa-receipt"></i> Invoice</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>GH-R1254</td>
+                                <td>Robert Brown</td>
+                                <td>Presidential Suite (401)</td>
+                                <td>Jun 2, 2025</td>
+                                <td>Jun 10, 2025</td>
+                                <td>$2,240</td>
+                                <td><span class="status checked-in">Checked In</span></td>
+                                <td>
+                                    <div class="action-dropdown">
+                                        <button class="btn btn-sm btn-primary dropdown-toggle">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="view-reservation"><i class="fas fa-eye"></i> View</a>
+                                            <a href="#" class="edit-reservation"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="#" class="checkout-reservation"><i class="fas fa-sign-out-alt"></i> Check-Out</a>
+                                            <a href="#" class="invoice-reservation"><i class="fas fa-receipt"></i> Invoice</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="calendar-view">
+                    <h3>Reservation Calendar</h3>
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <button class="btn btn-sm btn-secondary" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                            <h4 id="currentMonth">June 2025</h4>
+                            <button class="btn btn-sm btn-secondary" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="calendar-grid" id="calendarGrid">
+                            <!-- Calendar will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Reservation Modal -->
+                <div id="newReservationModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>New Reservation</h3>
+                        <form id="reservationForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reservationGuest">Guest:</label>
+                                    <select id="reservationGuest" required>
+                                        <option value="">Select Guest</option>
+                                        <option value="GH-1001">John Smith</option>
+                                        <option value="GH-1002">Emily Johnson</option>
+                                        <option value="GH-1003">Robert Brown</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reservationRoom">Room:</label>
+                                    <select id="reservationRoom" required>
+                                        <option value="">Select Room</option>
+                                        <option value="101">101 - Standard</option>
+                                        <option value="201">201 - Deluxe</option>
+                                        <option value="301">301 - Suite</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="checkInDate">Check-In:</label>
+                                    <input type="date" id="checkInDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="checkOutDate">Check-Out:</label>
+                                    <input type="date" id="checkOutDate" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reservationAdults">Adults:</label>
+                                <input type="number" id="reservationAdults" min="1" max="4" value="2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reservationChildren">Children:</label>
+                                <input type="number" id="reservationChildren" min="0" max="4" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="reservationSpecialRequests">Special Requests:</label>
+                                <textarea id="reservationSpecialRequests" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Create Reservation</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guests Section -->
+            <section id="guests" class="section" style="display: none;">
+                <div class="section-header">
+                    <h2>Guest Management</h2>
+                    <div class="guest-search">
+                        <input type="text" placeholder="Search guests..." id="guestSearch">
+                        <button class="btn btn-primary" id="addGuestBtn">
+                            <i class="fas fa-plus"></i> Add Guest
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table id="guestsTable">
+                        <thead>
+                            <tr>
+                                <th>Guest ID</th>
+                                <th>Name</th>
+                                <th>Contact</th>
+                                <th>Email</th>
+                                <th>ID Type</th>
+                                <th>ID Number</th>
+                                <th>Last Stay</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GH-1001</td>
+                                <td>
+                                    <div class="guest-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Guest">
+                                        <span>John Smith</span>
+                                    </div>
+                                </td>
+                                <td>+1 555-123-4567</td>
+                                <td>john.smith@example.com</td>
+                                <td>Passport</td>
+                                <td>P12345678</td>
+                                <td>Jun 3, 2025</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-guest"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning edit-guest"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-guest"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>GH-1002</td>
+                                <td>
+                                    <div class="guest-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Guest">
+                                        <span>Emily Johnson</span>
+                                    </div>
+                                </td>
+                                <td>+1 555-987-6543</td>
+                                <td>emily.j@example.com</td>
+                                <td>Driver License</td>
+                                <td>DL87654321</td>
+                                <td>Jun 5, 2025</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-guest"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning edit-guest"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-guest"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>GH-1003</td>
+                                <td>
+                                    <div class="guest-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Guest">
+                                        <span>Robert Brown</span>
+                                    </div>
+                                </td>
+                                <td>+1 555-456-7890</td>
+                                <td>robert.b@example.com</td>
+                                <td>Passport</td>
+                                <td>P98765432</td>
+                                <td>Jun 10, 2025</td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-guest"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning edit-guest"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-guest"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="pagination">
+                    <button class="btn btn-secondary" id="prevPage"><i class="fas fa-chevron-left"></i></button>
+                    <span class="page-info">Page 1 of 5</span>
+                    <button class="btn btn-secondary" id="nextPage"><i class="fas fa-chevron-right"></i></button>
+                </div>
+
+                <!-- Add Guest Modal -->
+                <div id="addGuestModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Add New Guest</h3>
+                        <form id="guestForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guestFirstName">First Name:</label>
+                                    <input type="text" id="guestFirstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guestLastName">Last Name:</label>
+                                    <input type="text" id="guestLastName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guestEmail">Email:</label>
+                                    <input type="email" id="guestEmail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guestPhone">Phone:</label>
+                                    <input type="tel" id="guestPhone" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="guestIdType">ID Type:</label>
+                                    <select id="guestIdType" required>
+                                        <option value="passport">Passport</option>
+                                        <option value="driver-license">Driver License</option>
+                                        <option value="national-id">National ID</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guestIdNumber">ID Number:</label>
+                                    <input type="text" id="guestIdNumber" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="guestAddress">Address:</label>
+                                <textarea id="guestAddress" rows="2"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="guestCountry">Country:</label>
+                                <input type="text" id="guestCountry">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Guest</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Staff Section -->
+            <section id="staff" class="section" style="display: none;">
+                <div class="section-header">
+                    <h2>Staff Management</h2>
+                    <button class="btn btn-primary" id="addStaffBtn">
+                        <i class="fas fa-plus"></i> Add Staff
+                    </button>
+                </div>
+                
+                <div class="staff-departments">
+                    <button class="btn btn-sm btn-outline active" data-department="all">All</button>
+                    <button class="btn btn-sm btn-outline" data-department="reception">Reception</button>
+                    <button class="btn btn-sm btn-outline" data-department="housekeeping">Housekeeping</button>
+                    <button class="btn btn-sm btn-outline" data-department="kitchen">Kitchen</button>
+                    <button class="btn btn-sm btn-outline" data-department="maintenance">Maintenance</button>
+                    <button class="btn btn-sm btn-outline" data-department="management">Management</button>
+                </div>
+                
+                <div class="table-container">
+                    <table id="staffTable">
+                        <thead>
+                            <tr>
+                                <th>Staff ID</th>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Department</th>
+                                <th>Contact</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-department="reception">
+                                <td>GH-S1001</td>
+                                <td>
+                                    <div class="staff-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Staff">
+                                        <span>Sarah Johnson</span>
+                                    </div>
+                                </td>
+                                <td>Front Desk Manager</td>
+                                <td>Reception</td>
+                                <td>+1 555-111-2222</td>
+                                <td>sarah.j@hotel.com</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-staff"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning edit-staff"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-staff"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr data-department="housekeeping">
+                                <td>GH-S1002</td>
+                                <td>
+                                    <div class="staff-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Staff">
+                                        <span>Michael Brown</span>
+                                    </div>
+                                </td>
+                                <td>Head Housekeeper</td>
+                                <td>Housekeeping</td>
+                                <td>+1 555-222-3333</td>
+                                <td>michael.b@hotel.com</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-staff"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning edit-staff"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-staff"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr data-department="kitchen">
+                                <td>GH-S1003</td>
+                                <td>
+                                    <div class="staff-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Staff">
+                                        <span>Emily Davis</span>
+                                    </div>
+                                </td>
+                                <td>Executive Chef</td>
+                                <td>Kitchen</td>
+                                <td>+1 555-333-4444</td>
+                                <td>emily.d@hotel.com</td>
+                                <td><span class="status on-leave">On Leave</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary view-staff"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-warning edit-staff"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-staff"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="staff-stats">
+                    <div class="stat-card">
+                        <h4>Total Staff</h4>
+                        <p>42</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Active</h4>
+                        <p>38</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>On Leave</h4>
+                        <p>3</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Vacant Positions</h4>
+                        <p>5</p>
+                    </div>
+                </div>
+
+                <!-- Add Staff Modal -->
+                <div id="addStaffModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3>Add New Staff Member</h3>
+                        <form id="staffForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="staffFirstName">First Name:</label>
+                                    <input type="text" id="staffFirstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="staffLastName">Last Name:</label>
+                                    <input type="text" id="staffLastName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="staffEmail">Email:</label>
+                                    <input type="email" id="staffEmail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="staffPhone">Phone:</label>
+                                    <input type="tel" id="staffPhone" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="staffPosition">Position:</label>
+                                    <input type="text" id="staffPosition" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="staffDepartment">Department:</label>
+                                    <select id="staffDepartment" required>
+                                        <option value="reception">Reception</option>
+                                        <option value="housekeeping">Housekeeping</option>
+                                        <option value="kitchen">Kitchen</option>
+                                        <option value="maintenance">Maintenance</option>
+                                        <option value="management">Management</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="staffHireDate">Hire Date:</label>
+                                    <input type="date" id="staffHireDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="staffSalary">Salary:</label>
+                                    <input type="number" id="staffSalary" min="0" step="100" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="staffStatus">Status:</label>
+                                <select id="staffStatus" required>
+                                    <option value="active">Active</option>
+                                    <option value="on-leave">On Leave</option>
+                                    <option value="terminated">Terminated</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Staff</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports" class="section" style="display: none;">
+                <div class="section-header">
+                    <h2>Reports & Analytics</h2>
+                    <div class="report-actions">
+                        <button class="btn btn-secondary" id="exportReportBtn">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                        <button class="btn btn-primary" id="printReportBtn">
+                            <i class="fas fa-print"></i> Print
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="report-filters">
+                    <div class="filter-group">
+                        <label for="reportType">Report Type:</label>
+                        <select id="reportType" class="form-control">
+                            <option value="occupancy">Occupancy Report</option>
+                            <option value="revenue">Revenue Report</option>
+                            <option value="guest">Guest Report</option>
+                            <option value="expenses">Expenses Report</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="reportPeriod">Period:</label>
+                        <select id="reportPeriod" class="form-control">
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month" selected>This Month</option>
+                            <option value="quarter">This Quarter</option>
+                            <option value="year">This Year</option>
+                            <option value="custom">Custom Range</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" id="customDateRange" style="display: none;">
+                        <label for="startDate">From:</label>
+                        <input type="date" id="startDate" class="form-control">
+                        <label for="endDate">To:</label>
+                        <input type="date" id="endDate" class="form-control">
+                    </div>
+                    <button class="btn btn-primary" id="generateReportBtn">
+                        <i class="fas fa-filter"></i> Generate
+                    </button>
+                </div>
+                
+                <div class="report-charts">
+                    <div class="chart-container">
+                        <h3>Monthly Occupancy Rate</h3>
+                        <div class="chart" id="occupancyChart">
+                            <canvas id="occupancyChartCanvas"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Revenue Breakdown</h3>
+                        <div class="chart" id="revenueChart">
+                            <canvas id="revenueChartCanvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detailed-report">
+                    <h3>Detailed Report Data</h3>
+                    <div class="table-container">
+                        <table id="reportDataTable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Occupied</th>
+                                    <th>Available</th>
+                                    <th>Occupancy %</th>
+                                    <th>Room Revenue</th>
+                                    <th>F&B Revenue</th>
+                                    <th>Other Revenue</th>
+                                    <th>Total Revenue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jun 1, 2025</td>
+                                    <td>78</td>
+                                    <td>42</td>
+                                    <td>65%</td>
+                                    <td>$9,360</td>
+                                    <td>$2,150</td>
+                                    <td>$780</td>
+                                    <td>$12,290</td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 2, 2025</td>
+                                    <td>82</td>
+                                    <td>38</td>
+                                    <td>68.3%</td>
+                                    <td>$9,840</td>
+                                    <td>$2,430</td>
+                                    <td>$920</td>
+                                    <td>$13,190</td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 3, 2025</td>
+                                    <td>84</td>
+                                    <td>36</td>
+                                    <td>70%</td>
+                                    <td>$10,080</td>
+                                    <td>$2,680</td>
+                                    <td>$1,050</td>
+                                    <td>$13,810</td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 4, 2025</td>
+                                    <td>80</td>
+                                    <td>40</td>
+                                    <td>66.7%</td>
+                                    <td>$9,600</td>
+                                    <td>$2,450</td>
+                                    <td>$890</td>
+                                    <td>$12,940</td>
+                                </tr>
+                                <tr>
+                                    <td>Jun 5, 2025</td>
+                                    <td>76</td>
+                                    <td>44</td>
+                                    <td>63.3%</td>
+                                    <td>$9,120</td>
+                                    <td>$2,100</td>
+                                    <td>$750</td>
+                                    <td>$11,970</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Grand Horizon Hotel Management System. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                <a href="#"><i class="fas fa-question-circle"></i> Help Center</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
